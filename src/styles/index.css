@@ -198,3 +198,37 @@ pre { font-family: 'DM Mono', monospace; }
   .nav-links { display: none !important; }
   footer { flex-direction: column !important; gap: 8px !important; text-align: center !important; }
 }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spinning-ring {
+  animation: spin 60s linear infinite;
+}
+
+/* Optional: Subtle scanline pulse */
+.hologram-scan {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* 1. Add color transition to the image */
+.spinning-ring-container img {
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+/* 2. Remove grayscale on hover */
+.spinning-ring-container:hover img {
+  filter: grayscale(0%) contrast(1.1) brightness(1.0) !important;
+  opacity: 1 !important;
+}
+
+/* 3. Increase glow on hover */
+.spinning-ring-container:hover .image-portal {
+  box-shadow: 0 0 120px rgba(0,229,255,0.4) !important;
+}

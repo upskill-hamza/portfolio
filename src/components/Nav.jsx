@@ -38,7 +38,7 @@ export default function Nav() {
           textDecoration: "none",
         }}
       >
-        Hamza<span style={{ color: "#00e5ff" }}>  </span>Ansari
+        Hamza<span style={{ color: "#00e5ff" }}>.</span>Ansari
       </a>
 
       {/* Links */}
