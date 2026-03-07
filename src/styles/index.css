@@ -26,6 +26,13 @@ body::before {
   z-index: 1;
   opacity: 0.4;
 }
+::selection {
+  background: rgba(0, 229, 255, 0.85);
+  color: #001a1f;
+  text-shadow: 
+    0 0 4px rgba(0,229,255,0.8),
+    0 0 10px rgba(0,229,255,0.6);
+}
 
 a, button { cursor: none; }
 
@@ -190,13 +197,15 @@ pre { font-family: 'DM Mono', monospace; }
 
 @media (max-width: 768px) {
   .about-grid { grid-template-columns: 1fr !important; }
-  .about-visual-col { display: none !important; }
+  /* .about-visual-col { display: none !important; } */
   .skills-grid { grid-template-columns: 1fr !important; }
   .projects-grid { grid-template-columns: 1fr !important; }
   .project-featured { grid-template-columns: 1fr !important; }
   nav { padding: 20px 24px !important; }
   .nav-links { display: none !important; }
   footer { flex-direction: column !important; gap: 8px !important; text-align: center !important; }
+  .mobile-menu-btn { display: block !important; }
+  .main-nav { padding: 20px 24px !important; }
 }
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -224,11 +233,145 @@ pre { font-family: 'DM Mono', monospace; }
 
 /* 2. Remove grayscale on hover */
 .spinning-ring-container:hover img {
-  filter: grayscale(0%) contrast(1.1) brightness(1.0) !important;
+  filter: grayscale(0%) contrast(1) brightness(1) !important;
   opacity: 1 !important;
 }
 
-/* 3. Increase glow on hover */
 .spinning-ring-container:hover .image-portal {
   box-shadow: 0 0 120px rgba(0,229,255,0.4) !important;
+}
+
+.image-portal {
+  transition: box-shadow 0.3s ease;
+}
+.hero-section {
+  padding: 0 48px;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+@media (max-width: 968px) {
+  .hero-section {
+    padding: 100px 24px 40px 24px; 
+  }
+
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  .hero-content {
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+  .hero-ctas {
+    justify-content: center; 
+  }
+
+  .hero-text-col {
+    max-width: 100% !important;
+  }
+  
+  .hero-text-col p {
+    margin: 0 auto 32px auto !important; 
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image-wrapper {
+    width: clamp(250px, 80vw, 350px) !important; 
+  }
+}
+
+/* ── Alternating Timeline ─────────────────────────────────── */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* The vertical line straight down the middle */
+.timeline-center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #00e5ff, #1a2030, transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 48px;
+  margin-bottom: 64px;
+}
+
+/* Left side cards (Even indices) */
+.timeline-left {
+  left: 0;
+  text-align: right;
+}
+
+/* Right side cards (Odd indices) */
+.timeline-right {
+  left: 50%;
+  text-align: left;
+}
+
+/* The glowing dot */
+.timeline-dot {
+  position: absolute;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #080c10;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 12px rgba(0,229,255,0.4);
+  z-index: 2;
+}
+
+/* Pin the dot to the right edge of left-side cards */
+.timeline-left .timeline-dot {
+  right: -6px; 
+}
+
+/* Pin the dot to the left edge of right-side cards */
+.timeline-right .timeline-dot {
+  left: -6px;
+}
+
+/* Ensures left-aligned text boxes stick to the center line */
+.timeline-left .desc-box {
+  margin-left: auto;
+}
+
+/* Mobile Override: Snap back to left-aligned */
+@media (max-width: 768px) {
+  .timeline-center-line {
+    left: 24px;
+    transform: none;
+  }
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 64px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+  .timeline-dot {
+    left: 18px !important; 
+    right: auto !important;
+  }
+  .timeline-left .desc-box {
+    margin-left: 0;
+  }
 }

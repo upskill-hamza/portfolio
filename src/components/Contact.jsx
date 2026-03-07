@@ -14,25 +14,36 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const LeetCodeIcon =() => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentcolor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-)
+const LeetCodeIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+  </svg>
+);
+
+const ResumeIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+  </svg>
+);
+
+// Added the type: "resume" to the last object!
 const SOCIAL = [
-  { label: "GitHub",   href: "https://github.com/upskill-hamza", icon: <GithubIcon /> },
+  { label: "GitHub",   href: "https://github.com/upskill-hamza",            icon: <GithubIcon /> },
   { label: "LinkedIn", href: "https://linkedin.com/in/hamza-ansari-1240ab2b7", icon: <LinkedInIcon /> },
-  { label: "LeetCode", href: "https://leetcode.com/u/9gtm6LLdDI", icon: <LeetCodeIcon /> },
-  { label: "Resume",   href: "/resume.pdf", icon: "📄" },
+  { label: "LeetCode", href: "https://leetcode.com/u/9gtm6LLdDI",           icon: <LeetCodeIcon /> },
+  { label: "Resume",   href: "/resume.pdf",                                 icon: <ResumeIcon />, type: "resume" }, 
 ];
 
-function SocialLink({ label, href, icon,type }) {
+function SocialLink({ label, href, icon, type }) {
   const [hov, setHov] = useState(false);
   const isResume = type === "resume";
+  
   return (
     <a
       href={href}
       target={isResume ? "_self" : "_blank"}
       rel="noopener noreferrer"
-      download={isResume ? "YourName_Resume.pdf" : undefined}
+      download={isResume ? "Hamza_Ansari_Resume.pdf" : undefined}
       className="hoverable"
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
@@ -63,19 +74,31 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      style={{ padding: "120px 48px", textAlign: "center", position: "relative", overflow: "hidden" }}
+      style={{
+        padding: "clamp(60px, 10vw, 120px) clamp(24px, 5vw, 48px)",
+        textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
+      }}
     >
       {/* Background glow */}
       <div
         style={{
-          position: "absolute", inset: 0,
+          position: "absolute",
+          inset: 0,
           background: "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,229,255,0.06), transparent)",
           pointerEvents: "none",
         }}
       />
 
       <Reveal>
-        <div style={{ position: "relative", maxWidth: "700px", margin: "0 auto" }}>
+        <div
+          style={{
+            position: "relative",
+            maxWidth: "700px",
+            margin: "0 auto",
+          }}
+        >
           <SectionLabel center>Let's Connect</SectionLabel>
 
           <h2
@@ -89,21 +112,48 @@ export default function Contact() {
           >
             Say
             <br />
-            <span style={{ WebkitTextStroke: "1.5px rgba(255,255,255,0.2)", color: "transparent" }}>
+            <span
+              style={{
+                WebkitTextStroke: "1.5px rgba(255,255,255,0.2)",
+                color: "transparent",
+              }}
+            >
               Hello
             </span>
           </h2>
 
-          <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", color: "#5a6475", marginBottom: "48px", lineHeight: 1.7 }}>
+          <p
+            style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "13px",
+              color: "#5a6475",
+              marginBottom: "48px",
+              lineHeight: 1.7,
+            }}
+          >
             I'm always open to new opportunities, collaborations, and interesting conversations.
             Whether it's an internship, a project, or just a chat about tech — reach out!
           </p>
 
-          <a href="mailto:hamzamohd60329@gmail.com" className="btn-primary hoverable" style={{ display: "inline-block", marginBottom: "48px" }}>
-            hamzamohd60329@gmail.com
+          <a
+            href="mailto:hamzamohd60329@gmail.com"
+            className="btn-primary hoverable"
+            style={{
+              display: "inline-block",
+              marginBottom: "48px",
+            }}
+          >
+            Send a Message
           </a>
 
-          <div style={{ display: "flex", justifyContent: "center", gap: "24px", flexWrap: "wrap" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "24px",
+              flexWrap: "wrap",
+            }}
+          >
             {SOCIAL.map((s) => (
               <SocialLink key={s.label} {...s} />
             ))}

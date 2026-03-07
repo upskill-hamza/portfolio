@@ -1,72 +1,56 @@
-# Alex Chen — Portfolio
+# [H] Hamza Ansari - Interactive Developer Portfolio
 
-A clean, production-ready React + Tailwind CSS developer portfolio with scroll-triggered animations.
+![alt text](image.png)
 
-## 📁 Project Structure
+A high-performance, cyberpunk-inspired personal portfolio designed to showcase full-stack development skills, projects, and technical experience. Built from the ground up with React, featuring custom scroll animations, a terminal-aesthetic UI, and fully responsive grid layouts.
 
-```
-portfolio/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/         # One file per UI component
-│   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Counter.jsx
-│   │   ├── Cursor.jsx
-│   │   ├── Experience.jsx
-│   │   ├── Footer.jsx
-│   │   ├── Hero.jsx
-│   │   ├── Marquee.jsx
-│   │   ├── Nav.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Reveal.jsx
-│   │   ├── SectionLabel.jsx
-│   │   └── Skills.jsx
-│   ├── data/
-│   │   └── portfolioData.js   # All content: skills, projects, timeline, etc.
-│   ├── hooks/
-│   │   ├── useCounter.js      # Animated number counter (scroll-triggered)
-│   │   ├── useReveal.js       # IntersectionObserver scroll reveal
-│   │   └── useScrolled.js     # Nav background on scroll
-│   ├── styles/
-│   │   └── index.css          # Global styles, keyframes, Tailwind base
-│   ├── App.jsx                # Root — assembles all sections
-│   └── index.js               # React DOM entry point
-├── package.json
-├── tailwind.config.js
-└── README.md
-```
+### 🌐 Live Site: [Insert Live URL Here]
 
-## 🚀 Getting Started
+---
 
-```bash
-# Install dependencies
-npm install
+## ⚡ Features
 
-# Install Tailwind
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+* **Custom Scroll Animations:** Utilizes the Intersection Observer API for smooth, staggered element revealing as the user navigates down the page.
+* **High-Tech UI/UX:** Features a dark #080c10 theme with glowing cyan (#00e5ff) accents, SVG "laser" timeline segments, and custom noise-texture overlays.
+* **Responsive Design:** Fluid typography and spacing using CSS clamp() functions, ensuring flawless rendering from ultra-wide desktop monitors down to mobile screens.
+* **Dynamic Project Grid:** Highlights featured full-stack applications (like Next.js/MongoDB platforms and React AI Chatbots) with blueprint-style hover effects.
+* **Terminal Aesthetic:** Includes a custom [H] SVG favicon and monospace typographic accents (DM Mono) to emulate a developer environment.
 
-# Start dev server
-npm start
-```
+---
 
-## ✨ Features
+## 🛠️ Tech Stack
 
-- **Custom cursor** — dot + lagging ring with hover scale effect
-- **Scroll triggers** — `useReveal` hook uses `IntersectionObserver` for buttery fade-up animations
-- **Counter animation** — stats count up from 0 when scrolled into view
-- **Animated marquee** — skills strip between hero and about sections
-- **Floating orbs** — CSS-animated background glows in the hero
-- **Responsive** — mobile-friendly with hidden sidebar elements on small screens
+* **Framework:** React.js
+* **Styling:** Tailwind CSS + Custom CSS Modules
+* **Icons & Graphics:** Hand-coded SVGs
+* **Architecture:** Component-driven design (Abstracted custom hooks)
 
-## 🛠 Customization
+---
 
-Edit **`src/data/portfolioData.js`** to update:
-- Your name, skills, and marquee items
-- Project cards (title, description, stack, links)
-- Experience / education timeline
-- Social links and email
+## 💻 Featured Work
 
-All content is centralized — no hunting through component files.
+1. **NeuralSketch — ML Drawing Classifier** A real-time sketch recognition app powered by a CNN trained on the Quick, Draw! dataset. Achieves 94% accuracy across 50 categories. Built with PyTorch for training and React for the canvas interface.
+2. **AlgoViz — DSA Visualizer:** Interactive visualization of 30+ algorithms and data structures with step-by-step animations and complexity analysis.
+
+---
+
+## 👨‍💻 About Me
+
+I am a B.Tech student in Computer Science Engineering specializing in Data Science at Jamia Millia Islamia. I have a strong foundation in Data Structures and Algorithms (Java, C++) and a passion for building robust full-stack web applications. Beyond the terminal, I blend technical execution with visual storytelling through graphic design, videography, and photography.
+
+* **Location:** Delhi, India
+* **Interests:** Web Development, Machine Learning, DSA
+---
+
+## 🚀 Running Locally
+
+To run this project on your local machine:
+
+1. Clone the repository: `git clone https://github.com/upskill-hamza/portfolio.git`
+2. Navigate into the directory: `cd portfolio`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev` (or `npm start`)
+
+---
+
+*Designed & Built by Hamza Ansari.*

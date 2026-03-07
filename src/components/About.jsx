@@ -37,14 +37,13 @@ export default function About() {
             Code is my<br />superpower
           </h2>
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", lineHeight: 1.9, color: "#5a6475", marginBottom: "16px" }}>
-            I'm a 2nd year Computer Science student passionate about building
+            I'm a 2nd year Computer Science student specializing in Data Science, passionate about building
             things that live on the internet, solving hard algorithmic challenges,
             and teaching machines to learn.
           </p>
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", lineHeight: 1.9, color: "#5a6475" }}>
             When I'm not grinding LeetCode or training neural networks, you'll
-            find me building side projects, contributing to open source, and
-            exploring the intersection of elegant design and robust engineering.
+            find me building side projects and exploring the intersection of robust engineering and visual storytelling—blending technical skills with my love for graphic design and photography.
           </p>
         </Reveal>
 
@@ -134,7 +133,7 @@ export default function About() {
             <span style={{ color: "#ff79c6" }}>while not </span>
             {"self.solved(problem):\n            self.iterate()\n        "}
             <span style={{ color: "#ff79c6" }}>return </span>
-            <span style={{ color: "#f1fa8c" }}>"Solution found!"\n\n"</span>
+            <span style={{ color: "#f1fa8c" }}>{'"Solution found!"\n\n'}</span>
             <span style={{ color: "#6272a4", fontStyle: "italic" }}># Currently building something cool...</span>
             {"\nHamza = "}
             <span style={{ color: "#00e5ff" }}>Developer</span>

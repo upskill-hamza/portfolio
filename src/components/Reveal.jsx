@@ -1,13 +1,6 @@
 import { useReveal } from "../hooks/useReveal";
 
-/**
- * Reveal — wraps children with a scroll-triggered fade-up animation.
- *
- * Props:
- *  delay     {number}  — transition delay in ms
- *  className {string}  — extra classes on the wrapper div
- *  style     {object}  — extra inline styles
- */
+
 export default function Reveal({ children, delay = 0, className = "", style = {} }) {
   const [ref, visible] = useReveal();
 

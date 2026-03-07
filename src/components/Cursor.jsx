@@ -1,16 +1,21 @@
 import { useRef, useState, useEffect } from "react";
 
-/**
- * Cursor — custom dot + lagging ring cursor.
- * Hides the system cursor (set cursor: none on body in CSS).
- */
 export default function Cursor() {
   const dotRef  = useRef(null);
   const ringRef = useRef(null);
   const pos     = useRef({ mx: 0, my: 0, rx: 0, ry: 0 });
   const [hovered, setHovered] = useState(false);
 
+  // Optional: Detect if device is touch-enabled to hide cursor
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
   useEffect(() => {
+    // Check for touch device on mount
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      setIsTouchDevice(true);
+      return; // Stop running cursor logic on phones
+    }
+
     // Track mouse position → update dot instantly
     const onMove = (e) => {
       pos.current.mx = e.clientX;
@@ -26,8 +31,10 @@ export default function Cursor() {
     let raf;
     const animate = () => {
       const p = pos.current;
-      p.rx += (p.mx - p.rx) * 0.12;
+      // The 0.12 acts as friction/easing. Lower = more lag, Higher = tighter
+      p.rx += (p.mx - p.rx) * 0.12; 
       p.ry += (p.my - p.ry) * 0.12;
+      
       if (ringRef.current) {
         ringRef.current.style.left = p.rx + "px";
         ringRef.current.style.top  = p.ry + "px";
@@ -36,27 +43,37 @@ export default function Cursor() {
     };
     raf = requestAnimationFrame(animate);
 
-    // Hover detection
-    const enter = () => setHovered(true);
-    const leave = () => setHovered(false);
-    const targets = document.querySelectorAll("a, button, .hoverable");
-    targets.forEach((el) => {
-      el.addEventListener("mouseenter", enter);
-      el.addEventListener("mouseleave", leave);
-    });
+    // Hover detection (Event Delegation)
+    const handleMouseOver = (e) => {
+      // .closest() checks if the element or any of its parents match the selector
+      if (e.target.closest("a, button, .hoverable")) {
+        setHovered(true);
+      }
+    };
+
+    const handleMouseOut = (e) => {
+      if (e.target.closest("a, button, .hoverable")) {
+        setHovered(false);
+      }
+    };
+
+    // Attach listeners to the document, not individual elements
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
-      targets.forEach((el) => {
-        el.removeEventListener("mouseenter", enter);
-        el.removeEventListener("mouseleave", leave);
-      });
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
     };
   }, []);
 
-  const dotSize  = hovered ? "20px" : "10px";
-  const ringSize = hovered ? "52px" : "36px";
+  // If it's a mobile/touch device, don't render the custom cursor at all
+  if (isTouchDevice) return null;
+
+  const dotSize  = hovered ? "15px" : "10px";
+  const ringSize = hovered ? "45px" : "36px";
 
   return (
     <>
@@ -65,7 +82,8 @@ export default function Cursor() {
         ref={dotRef}
         style={{
           position: "fixed",
-          top: 0, left: 0,
+          top: 0,
+          left: 0,
           zIndex: 9999,
           pointerEvents: "none",
           borderRadius: "50%",
@@ -81,7 +99,8 @@ export default function Cursor() {
         ref={ringRef}
         style={{
           position: "fixed",
-          top: 0, left: 0,
+          top: 0,
+          left: 0,
           zIndex: 9998,
           pointerEvents: "none",
           borderRadius: "50%",

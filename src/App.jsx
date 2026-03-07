@@ -11,9 +11,7 @@ import Experience from "./components/Experience";
 import Contact    from "./components/Contact";
 import Footer     from "./components/Footer";
 
-/**
- * App — root component. Composes all sections in order.
- */
+
 export default function App() {
   return (
     <>

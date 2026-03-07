@@ -1,6 +1,3 @@
-/**
- * Footer — simple bottom bar with credits.
- */
 export default function Footer() {
   return (
     <footer

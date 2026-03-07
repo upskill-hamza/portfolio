@@ -25,10 +25,10 @@ export const STATS = [
 // ── Skill categories ──────────────────────────────────────────────────────────
 export const SKILL_CATS = [
   {
-    icon: "⚡",
-    title: "Web Development",
-    desc: "Building fast, accessible, and beautiful web experiences from frontend to backend.",
-    tags: ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL", "Tailwind"],
+    icon: "🌐",
+title: "Full-Stack & Design",
+    desc: "Building fast, high-performance web applications. I love bridging the gap between robust backend architecture and highly engaging visual storytelling.",
+    tags: ["React", "Next.js", "Tailwind CSS", "MongoDB", "Node.js", "REST APIs", "Graphic Design"],
   },
   {
     icon: "🧩",
@@ -38,8 +38,8 @@ export const SKILL_CATS = [
   },
   {
     icon: "🤖",
-    title: "Machine Learning",
-    desc: "Training models that learn, predict, and solve real-world problems with data.",
+title: "Data Science & ML",
+    desc: "Extracting insights from complex datasets, training intelligent models that learn, predict, and solve real-world problems with data. ",
     tags: ["Python", "TensorFlow", "PyTorch", "scikit-learn", "CNNs", "NLP", "Pandas", "NumPy", "Jupyter", "LLMs"],
   },
 ];
@@ -52,7 +52,7 @@ export const PROJECTS = [
     desc: "A real-time sketch recognition app powered by a CNN trained on the Quick, Draw! dataset. Achieves 94% accuracy across 50 categories. Built with PyTorch for training and React for the canvas interface.",
     stack: ["PyTorch", "React", "FastAPI", "Canvas API", "Docker"],
     icon: "🧠",
-    glow: "rgba(168,85,247,0.12)",
+    glow: "rgba(168,85,247,0.15)",
     featured: true,
     link: "#",
   },
