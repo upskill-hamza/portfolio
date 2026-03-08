@@ -1,4 +1,4 @@
-// ── Marquee items ─────────────────────────────────────────────────────────────
+// ── Marquee items 
 export const MARQUEE_ITEMS = [
   { label: "Web Development", accent: true },
   { label: "React" },
@@ -14,7 +14,7 @@ export const MARQUEE_ITEMS = [
   { label: "MongoDB" },
 ];
 
-// ── About stats ───────────────────────────────────────────────────────────────
+// ── About stats 
 export const STATS = [
   { num: 350, suffix: "+", label: "LeetCode Problems Solved" },
   { num: 15, suffix: "+", label: "Projects Shipped" },
@@ -22,7 +22,7 @@ export const STATS = [
   { num: 5, suffix: "", label: "Hackathon Awards" },
 ];
 
-// ── Skill categories ──────────────────────────────────────────────────────────
+// ── Skill categories 
 export const SKILL_CATS = [
   {
     icon: "🌐",
@@ -44,7 +44,7 @@ title: "Data Science & ML",
   },
 ];
 
-// ── Projects ──────────────────────────────────────────────────────────────────
+// ── Projects ─────
 export const PROJECTS = [
   {
     num: "01 / Featured",
@@ -78,7 +78,7 @@ export const PROJECTS = [
   },
 ];
 
-// ── Timeline ──────────────────────────────────────────────────────────────────
+// ── Timeline ─────
 export const TIMELINE = [
   {
     date: "2026 - Present",
@@ -108,7 +108,7 @@ export const TIMELINE = [
   },
 ];
 
-// ── Social links ──────────────────────────────────────────────────────────────
+// ── Social links ─
 export const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/upskill-hamza", type: "github" },
   { label: "LinkedIn", href: "https://linkedin.com/in/hamza-ansari-1240ab2b7", type: "linkedin" },

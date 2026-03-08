@@ -21,7 +21,6 @@ function SkillCard({ cat }) {
         transition: "border-color 0.3s, transform 0.3s",
       }}
     >
-      {/* Bottom glow line on hover */}
       <div
         className="skill-bottom-line"
         style={{ opacity: hov ? 1 : 0 }}
@@ -60,9 +59,6 @@ function SkillCard({ cat }) {
   );
 }
 
-/**
- * Skills — three-column grid of skill category cards.
- */
 export default function Skills() {
   return (
     <section id="skills" style={{ padding: "120px 48px", maxWidth: "1200px", margin: "0 auto" }}>

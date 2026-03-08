@@ -1,51 +1,44 @@
 import { useRef, useState, useEffect } from "react";
 
 export default function Cursor() {
-  const dotRef  = useRef(null);
+  const dotRef = useRef(null);
   const ringRef = useRef(null);
-  const pos     = useRef({ mx: 0, my: 0, rx: 0, ry: 0 });
+  const pos = useRef({ mx: 0, my: 0, rx: 0, ry: 0 });
   const [hovered, setHovered] = useState(false);
 
-  // Optional: Detect if device is touch-enabled to hide cursor
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // Check for touch device on mount
     if (window.matchMedia("(pointer: coarse)").matches) {
       setIsTouchDevice(true);
-      return; // Stop running cursor logic on phones
+      return;
     }
 
-    // Track mouse position → update dot instantly
     const onMove = (e) => {
       pos.current.mx = e.clientX;
       pos.current.my = e.clientY;
       if (dotRef.current) {
         dotRef.current.style.left = e.clientX + "px";
-        dotRef.current.style.top  = e.clientY + "px";
+        dotRef.current.style.top = e.clientY + "px";
       }
     };
     window.addEventListener("mousemove", onMove);
 
-    // Smooth ring lag
     let raf;
     const animate = () => {
       const p = pos.current;
-      // The 0.12 acts as friction/easing. Lower = more lag, Higher = tighter
-      p.rx += (p.mx - p.rx) * 0.12; 
+      p.rx += (p.mx - p.rx) * 0.12;
       p.ry += (p.my - p.ry) * 0.12;
-      
+
       if (ringRef.current) {
         ringRef.current.style.left = p.rx + "px";
-        ringRef.current.style.top  = p.ry + "px";
+        ringRef.current.style.top = p.ry + "px";
       }
       raf = requestAnimationFrame(animate);
     };
     raf = requestAnimationFrame(animate);
 
-    // Hover detection (Event Delegation)
     const handleMouseOver = (e) => {
-      // .closest() checks if the element or any of its parents match the selector
       if (e.target.closest("a, button, .hoverable")) {
         setHovered(true);
       }
@@ -57,7 +50,6 @@ export default function Cursor() {
       }
     };
 
-    // Attach listeners to the document, not individual elements
     document.addEventListener("mouseover", handleMouseOver);
     document.addEventListener("mouseout", handleMouseOut);
 
@@ -69,15 +61,13 @@ export default function Cursor() {
     };
   }, []);
 
-  // If it's a mobile/touch device, don't render the custom cursor at all
   if (isTouchDevice) return null;
 
-  const dotSize  = hovered ? "15px" : "10px";
+  const dotSize = hovered ? "15px" : "10px";
   const ringSize = hovered ? "45px" : "36px";
 
   return (
     <>
-      {/* Dot */}
       <div
         ref={dotRef}
         style={{
@@ -94,7 +84,6 @@ export default function Cursor() {
           transition: "width 0.2s, height 0.2s",
         }}
       />
-      {/* Ring */}
       <div
         ref={ringRef}
         style={{

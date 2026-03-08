@@ -23,7 +23,6 @@ function ProjectCard({ project, delay = 0 }) {
           gridTemplateColumns: project.featured ? "1fr 1fr" : undefined,
         }}
       >
-        {/* Visual */}
         <div
           style={{
             height: project.featured ? "auto" : "220px",
@@ -47,7 +46,6 @@ function ProjectCard({ project, delay = 0 }) {
           <span style={{ position: "relative", zIndex: 1 }}>{project.icon}</span>
         </div>
 
-        {/* Body */}
         <div style={{ padding: "32px" }}>
           <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", color: "#5a6475", letterSpacing: "0.1em", marginBottom: "12px" }}>
             {project.num}
@@ -59,7 +57,6 @@ function ProjectCard({ project, delay = 0 }) {
             {project.desc}
           </div>
 
-          {/* Stack tags */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "24px" }}>
             {project.stack.map((tag) => (
               <span
@@ -103,9 +100,6 @@ function ProjectCard({ project, delay = 0 }) {
   );
 }
 
-/**
- * Projects — featured project grid with a wide hero card on top.
- */
 export default function Projects() {
   const [featured, ...rest] = PROJECTS;
 
@@ -130,12 +124,10 @@ export default function Projects() {
         className="projects-grid"
         style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px" }}
       >
-        {/* Featured spans both columns */}
         <div style={{ gridColumn: "1 / -1" }} className="project-featured">
           <ProjectCard project={featured} delay={0} />
         </div>
 
-        {/* Remaining cards */}
         {rest.map((p, i) => (
           <ProjectCard key={p.num} project={p} delay={(i + 1) * 100} />
         ))}
