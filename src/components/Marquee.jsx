@@ -1,10 +1,6 @@
 import { MARQUEE_ITEMS } from "../data/portfolioData";
 
-/**
- * Marquee — horizontally scrolling skills strip between Hero and About.
- */
 export default function Marquee() {
-  // Duplicate items so the loop is seamless
   const items = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (

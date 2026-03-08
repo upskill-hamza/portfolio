@@ -63,15 +63,15 @@ export default function Nav() {
           href="#hero"
           onClick={closeMenu}
           style={{
-            display: "flex",       
-            alignItems: "center",  
-            gap: "12px",           
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
             fontSize: "18px",
             fontWeight: 800,
             letterSpacing: "-0.5px",
             color: "#e8edf5",
             textDecoration: "none",
-            zIndex: 102, 
+            zIndex: 102,
           }}
         >
 
@@ -117,7 +117,7 @@ export default function Nav() {
           className="mobile-menu-btn hoverable"
           onClick={toggleMenu}
           style={{
-            display: "none", 
+            display: "none",
             background: "transparent",
             border: "none",
             color: "#00e5ff",
@@ -148,21 +148,21 @@ export default function Nav() {
           transition: "opacity 0.4s ease",
         }}
       >
-        <div 
+        <div
           style={{
             position: "absolute",
             inset: 0,
             background: "linear-gradient(to bottom, transparent 50%, rgba(0,229,255,0.02) 50%)",
             backgroundSize: "100% 4px",
             pointerEvents: "none"
-          }} 
+          }}
         />
 
         <ul style={{ listStyle: "none", padding: 0, margin: 0, textAlign: "center" }}>
           {NAV_LINKS.map((label, index) => (
-            <li 
-              key={label} 
-              style={{ 
+            <li
+              key={label}
+              style={{
                 margin: "24px 0",
                 transform: isMenuOpen ? "translateY(0)" : "translateY(20px)",
                 opacity: isMenuOpen ? 1 : 0,

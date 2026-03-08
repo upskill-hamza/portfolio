@@ -2,9 +2,6 @@ import Reveal from "./Reveal";
 import SectionLabel from "./SectionLabel";
 import { TIMELINE } from "../data/portfolioData";
 
-/**
- * Experience — alternating left/right timeline.
- */
 export default function Experience() {
   return (
     <section
@@ -24,7 +21,7 @@ export default function Experience() {
             letterSpacing: "-2px",
             lineHeight: 1.05,
             marginBottom: "64px",
-            textAlign: "center", // Centered heading looks great with a center timeline
+            textAlign: "center",
           }}
         >
           Experience & Education
@@ -32,11 +29,11 @@ export default function Experience() {
       </Reveal>
 
       <div className="timeline-container">
-        {/* The center gradient line */}
+
         <div className="timeline-center-line" />
 
         {TIMELINE.map((item, i) => {
-          // Even numbers (0, 2, 4) go left. Odd numbers (1, 3, 5) go right.
+
           const isLeft = i % 2 === 0;
 
           return (
@@ -44,10 +41,8 @@ export default function Experience() {
               <div
                 className={`timeline-item ${isLeft ? "timeline-left" : "timeline-right"}`}
               >
-                {/* Glowing Dot */}
                 <div className="timeline-dot" />
 
-                {/* Date */}
                 <div
                   style={{
                     fontFamily: "'DM Mono', monospace",
@@ -60,7 +55,6 @@ export default function Experience() {
                   {item.date}
                 </div>
 
-                {/* Role / Degree */}
                 <div
                   style={{
                     fontSize: "22px",
@@ -72,7 +66,6 @@ export default function Experience() {
                   {item.role}
                 </div>
 
-                {/* Organization / University */}
                 <div
                   style={{
                     fontFamily: "'DM Mono', monospace",
@@ -84,7 +77,6 @@ export default function Experience() {
                   {item.org}
                 </div>
 
-                {/* Description */}
                 <div
                   className="desc-box"
                   style={{
@@ -92,7 +84,7 @@ export default function Experience() {
                     fontSize: "12px",
                     color: "#bec1c4",
                     lineHeight: 1.8,
-                    maxWidth: "400px", // Shorter max-width so it fits on half the screen
+                    maxWidth: "400px",
                   }}
                 >
                   {item.desc}

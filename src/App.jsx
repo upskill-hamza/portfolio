@@ -10,11 +10,13 @@ import Projects   from "./components/Projects";
 import Experience from "./components/Experience";
 import Contact    from "./components/Contact";
 import Footer     from "./components/Footer";
+import MusicToggle from "./components/MusicToggle";
 
 
 export default function App() {
   return (
     <>
+      <MusicToggle/>
       <Cursor />
       <Nav />
       <main>

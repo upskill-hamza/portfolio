@@ -1,6 +1,3 @@
-/**
- * SectionLabel — accent label shown above section titles.
- */
 export default function SectionLabel({ children, center = false }) {
   return (
     <div

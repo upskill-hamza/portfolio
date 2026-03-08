@@ -3,9 +3,6 @@ import Counter from "./Counter";
 import SectionLabel from "./SectionLabel";
 import { STATS } from "../data/portfolioData";
 
-/**
- * About — bio text, animated stat cards, and a code window visual.
- */
 export default function About() {
   return (
     <section
@@ -21,7 +18,6 @@ export default function About() {
         margin: "0 auto",
       }}
     >
-      {/* Left — text + stats */}
       <div>
         <Reveal>
           <SectionLabel>About Me</SectionLabel>
@@ -47,7 +43,6 @@ export default function About() {
           </p>
         </Reveal>
 
-        {/* Stats grid */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "24px", marginTop: "40px" }}>
           {STATS.map((stat, i) => (
             <Reveal key={i} delay={i * 100}>
@@ -73,7 +68,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Right — code window */}
       <Reveal delay={200} className="about-visual-col">
         <div
           style={{
@@ -87,7 +81,6 @@ export default function About() {
             boxShadow: "0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,229,255,0.05)",
           }}
         >
-          {/* Title bar */}
           <div
             style={{
               display: "flex",
@@ -104,7 +97,6 @@ export default function About() {
             <span style={{ marginLeft: "8px", fontSize: "11px", color: "#5a6475" }}>about_me.py</span>
           </div>
 
-          {/* Code body */}
           <pre style={{ padding: "20px", margin: 0, overflowX: "auto", fontSize: "12px" }}>
             <span style={{ color: "#6272a4", fontStyle: "italic" }}># Hello, World! 👋{"\n\n"}</span>
             <span style={{ color: "#ff79c6" }}>class </span>

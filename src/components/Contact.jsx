@@ -26,18 +26,17 @@ const ResumeIcon = () => (
   </svg>
 );
 
-// Added the type: "resume" to the last object!
 const SOCIAL = [
-  { label: "GitHub",   href: "https://github.com/upskill-hamza",            icon: <GithubIcon /> },
+  { label: "GitHub", href: "https://github.com/upskill-hamza", icon: <GithubIcon /> },
   { label: "LinkedIn", href: "https://linkedin.com/in/hamza-ansari-1240ab2b7", icon: <LinkedInIcon /> },
-  { label: "LeetCode", href: "https://leetcode.com/u/9gtm6LLdDI",           icon: <LeetCodeIcon /> },
-  { label: "Resume",   href: "/resume.pdf",                                 icon: <ResumeIcon />, type: "resume" }, 
+  { label: "LeetCode", href: "https://leetcode.com/u/9gtm6LLdDI", icon: <LeetCodeIcon /> },
+  { label: "Resume", href: "/resume.pdf", icon: <ResumeIcon />, type: "resume" },
 ];
 
 function SocialLink({ label, href, icon, type }) {
   const [hov, setHov] = useState(false);
   const isResume = type === "resume";
-  
+
   return (
     <a
       href={href}
@@ -67,9 +66,6 @@ function SocialLink({ label, href, icon, type }) {
   );
 }
 
-/**
- * Contact — CTA section with email link and social buttons.
- */
 export default function Contact() {
   return (
     <section
@@ -81,7 +77,6 @@ export default function Contact() {
         overflow: "hidden",
       }}
     >
-      {/* Background glow */}
       <div
         style={{
           position: "absolute",
