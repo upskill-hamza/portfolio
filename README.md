@@ -1,6 +1,6 @@
 # [H] Hamza Ansari - Interactive Developer Portfolio
 
-![alt text](image.png)
+![alt text](/public/image.png)
 
 A high-performance, cyberpunk-inspired personal portfolio designed to showcase full-stack development skills, projects, and technical experience. Built from the ground up with React, featuring custom scroll animations, a terminal-aesthetic UI, and fully responsive grid layouts.
 
