@@ -43,7 +43,46 @@ function ProjectCard({ project, delay = 0 }) {
               background: `radial-gradient(circle at 50% 50%, ${project.glow}, transparent 70%)`,
             }}
           />
-          <span style={{ position: "relative", zIndex: 1 }}>{project.icon}</span>
+          <div style={{ position: "relative", width: "90%", height: "90%"  }}>
+            {/* Screenshot */}
+            {project.image && (
+              <img
+                src={project.image}
+                alt={project.title}
+                style={{
+                  border: "2px solid rgba(255,255,255,0.6)",
+                  transform: hov ? "scale(1)" : "scale(1.05)",
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  opacity: hov ? 1 : 0,
+                  transform: hov ? "translateY(0)" : "translateY(20px)",
+                  transition: "opacity 0.35s ease, transform 0.35s ease",
+                  zIndex: 1,
+                }}
+              />
+            )}
+
+            {/* Icon */}
+            <span
+              style={{
+                position: "absolute",
+                inset: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: project.featured ? "64px" : "48px",
+                opacity: hov ? 0 : 1,
+                transform: hov ? "translateY(-20px)" : "translateY(0)",
+                transition: "opacity 0.35s ease, transform 0.35s ease",
+                zIndex: 2,
+              }}
+            >
+              {project.icon}
+            </span>
+          </div>
         </div>
 
         <div style={{ padding: "32px" }}>
@@ -77,7 +116,8 @@ function ProjectCard({ project, delay = 0 }) {
           </div>
 
           <a
-            href={project.link}
+            href={"https://github.com/upskill-hamza/NeuralSketch"}
+            target="_blank"
             className="hoverable"
             style={{
               fontFamily: "'DM Mono', monospace",

@@ -52,9 +52,10 @@ export const PROJECTS = [
     desc: "A real-time sketch recognition app powered by a CNN trained on the Quick, Draw! dataset. Achieves 94% accuracy across 50 categories. Built with PyTorch for training and React for the canvas interface.",
     stack: ["PyTorch", "React", "FastAPI", "Canvas API", "Docker"],
     icon: "🧠",
+    image: "/neuralsketch.png",
     glow: "rgba(168,85,247,0.15)",
     featured: true,
-    link: "#",
+    link: "https://github.com/upskill-hamza/NeuralSketch",
   },
   {
     num: "02",
