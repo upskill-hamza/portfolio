@@ -9,7 +9,7 @@ function ProjectCard({ project, delay = 0 }) {
   return (
     <Reveal delay={delay}>
       <div
-        className="hoverable"
+        className={`hoverable${project.featured ? " featured-card" : ""}`}
         onMouseEnter={() => setHov(true)}
         onMouseLeave={() => setHov(false)}
         style={{
@@ -51,14 +51,13 @@ function ProjectCard({ project, delay = 0 }) {
                 alt={project.title}
                 style={{
                   border: "2px solid rgba(255,255,255,0.6)",
-                  transform: hov ? "scale(1)" : "scale(1.05)",
                   position: "absolute",
                   inset: 0,
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
                   opacity: hov ? 1 : 0,
-                  transform: hov ? "translateY(0)" : "translateY(20px)",
+                  transform: hov ? "translateY(0) scale(1)" : "translateY(20px) scale(1.05)",
                   transition: "opacity 0.35s ease, transform 0.35s ease",
                   zIndex: 1,
                 }}
@@ -116,7 +115,7 @@ function ProjectCard({ project, delay = 0 }) {
           </div>
 
           <a
-            href={"https://github.com/upskill-hamza/NeuralSketch"}
+            href={project.link}
             target="_blank"
             className="hoverable"
             style={{
@@ -144,7 +143,7 @@ export default function Projects() {
   const [featured, ...rest] = PROJECTS;
 
   return (
-    <section id="projects" style={{ padding: "120px 48px", maxWidth: "1200px", margin: "0 auto" }}>
+    <section id="projects" className="projects-section" style={{ padding: "120px 48px", maxWidth: "1200px", margin: "0 auto" }}>
       <Reveal>
         <SectionLabel>Work</SectionLabel>
         <h2

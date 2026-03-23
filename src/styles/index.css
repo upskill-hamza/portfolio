@@ -192,6 +192,26 @@ pre { font-family: 'DM Mono', monospace; }
   footer { flex-direction: column !important; gap: 8px !important; text-align: center !important; }
   .mobile-menu-btn { display: block !important; }
   .main-nav { padding: 20px 24px !important; }
+
+  /* ── Featured project card: stack on mobile ── */
+  .featured-card {
+    grid-template-columns: 1fr !important;
+    display: block !important;
+  }
+
+  .featured-card > div:first-child {
+    min-height: 220px !important;
+    height: 220px !important;
+  }
+
+  .featured-card > div:last-child {
+    padding: 24px !important;
+  }
+
+  /* ── Projects section padding ── */
+  .projects-section {
+    padding: 80px 20px !important;
+  }
 }
 @keyframes spin {
   from { transform: rotate(0deg); }
