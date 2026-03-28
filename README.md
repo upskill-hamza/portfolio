@@ -34,13 +34,6 @@ A high-performance, cyberpunk-inspired personal portfolio designed to showcase f
 
 ---
 
-## 👨‍💻 About Me
-
-I am a B.Tech student in Computer Science Engineering specializing in Data Science at Jamia Millia Islamia. I have a strong foundation in Data Structures and Algorithms (Java, C++) and a passion for building robust full-stack web applications. Beyond the terminal, I blend technical execution with visual storytelling through graphic design, videography, and photography.
-
-* **Location:** Delhi, India
-* **Interests:** Web Development, Machine Learning, DSA
----
 
 ## 🚀 Running Locally
 
