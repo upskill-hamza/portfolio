@@ -16,7 +16,7 @@ export const MARQUEE_ITEMS = [
 
 // ── About stats 
 export const STATS = [
-  { num: 350, suffix: "+", label: "LeetCode Problems Solved" },
+  { num: 400, suffix: "+", label: "LeetCode Problems Solved" },
   { num: 15, suffix: "+", label: "Projects Shipped" },
   { num: 9.1, suffix: "", label: "GPA" },
   { num: 5, suffix: "", label: "Hackathon Awards" },
@@ -113,6 +113,6 @@ export const TIMELINE = [
 export const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/upskill-hamza", type: "github" },
   { label: "LinkedIn", href: "https://linkedin.com/in/hamza-ansari-1240ab2b7", type: "linkedin" },
-  { label: "Resume", href: "/resume.pdf", type: "resume" },
+  { label: "Resume", href: "/Resume.pdf", type: "resume" },
   { label: "LeetCode", href: "https://leetcode.com/u/9gtm6LLdDI", type: "leetcode" }
 ];
