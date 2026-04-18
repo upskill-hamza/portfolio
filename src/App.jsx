@@ -11,6 +11,7 @@ import Experience from "./components/Experience";
 import Contact    from "./components/Contact";
 import Footer     from "./components/Footer";
 import MusicToggle from "./components/MusicToggle";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <SpeedInsights />
     </>
   );
 }
