@@ -29,8 +29,8 @@ const ResumeIcon = () => (
 const SOCIAL = [
   { label: "GitHub", href: "https://github.com/upskill-hamza", icon: <GithubIcon /> },
   { label: "LinkedIn", href: "https://linkedin.com/in/hamza-ansari-1240ab2b7", icon: <LinkedInIcon /> },
-  { label: "LeetCode", href: "https://leetcode.com/u/9gtm6LLdDI", icon: <LeetCodeIcon /> },
-  { label: "Resume", href: "/resume.pdf", icon: <ResumeIcon />, type: "resume" },
+  { label: "LeetCode", href: "https://leetcode.com/u/HamzaUpskill", icon: <LeetCodeIcon /> },
+  { label: "Resume", href: "/Hamza_Resume.pdf", icon: <ResumeIcon />, type: "resume" },
 ];
 
 function SocialLink({ label, href, icon, type }) {

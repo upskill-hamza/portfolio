@@ -140,7 +140,7 @@ export default function Hero() {
               animation: "fadeUp 0.8s 0.8s both",
             }}
           >
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary hoverable">
+            <a href="/Hamza_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary hoverable">
               View My Resume
             </a>
             <a href="#contact" className="btn-outline hoverable">

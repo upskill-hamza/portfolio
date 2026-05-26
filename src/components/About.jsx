@@ -33,7 +33,7 @@ export default function About() {
             Code is my<br />superpower
           </h2>
           <p style={{ fontFamily: "'DM Mono', monospace", fontSize: "13px", lineHeight: 1.9, color: "#5a6475", marginBottom: "16px" }}>
-            I'm a 2nd year Computer Science student specializing in Data Science, passionate about building
+            I'm a 3rd year Computer Science student specializing in Data Science, passionate about building
             things that live on the internet, solving hard algorithmic challenges,
             and teaching machines to learn.
           </p>
@@ -109,7 +109,7 @@ export default function About() {
             {"\n        self.role = "}
             <span style={{ color: "#f1fa8c" }}>"CS Student"</span>
             {"\n        self.year = "}
-            <span style={{ color: "#bd93f9" }}>2</span>
+            <span style={{ color: "#bd93f9" }}>3</span>
             {"\n\n        self.skills = [\n            "}
             <span style={{ color: "#f1fa8c" }}>"Web Development"</span>
             {",\n            "}
