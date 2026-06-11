@@ -14,7 +14,7 @@ function ProjectCard({ project, delay = 0 }) {
         onMouseLeave={() => setHov(false)}
         style={{
           background: "#0f1520",
-          border: `1px solid ${hov ? "rgba(0,229,255,0.3)" : "#1a2030"}`,
+          border: `1px so lid ${hov ? "rgba(0,229,255,0.3)" : "#1a2030"}`,
           overflow: "hidden",
           position: "relative",
           transform: hov ? "translateY(-6px)" : "none",
