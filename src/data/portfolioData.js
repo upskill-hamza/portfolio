@@ -16,7 +16,7 @@ export const MARQUEE_ITEMS = [
 
 // ── About stats 
 export const STATS = [
-  { num: 450, suffix: "+", label: "LeetCode Problems Solved" },
+  { num: 470, suffix: "+", label: "LeetCode Problems Solved" },
   { num: 15, suffix: "+", label: "Projects Shipped" },
   { num: 9.1, suffix: "", label: "GPA" },
   { num: 5, suffix: "", label: "Hackathon Awards" },
@@ -62,40 +62,52 @@ export const PROJECTS = [
     title: "NeuralSketch — ML Drawing Classifier",
     desc: "A real-time sketch recognition app powered by a CNN trained on the Quick, Draw! dataset. Achieves 94% accuracy across 50 categories. Built with PyTorch for training and React for the canvas interface.",
     stack: ["PyTorch", "React", "FastAPI", "Canvas API", "Docker"],
-    icon: "🧠",
+    icon: "⚡",
     image: "/neuralsketch.png",
     glow: "rgba(168,85,247,0.15)",
     link: "https://github.com/upskill-hamza/NeuralSketch",
   },
   {
     num: "03",
-    title: "DevCollab — Real-time Code Platform",
-    desc: "Full-stack collaborative coding platform with live editing, syntax highlighting, and video chat powered by WebRTC.",
-    stack: ["React", "Socket.io", "WebRTC", "MongoDB"],
+    title: "Enactus JMI — official website",
+    desc: "Developed a responsive website using Next.js to manage organizational content. Integrated Hygraph CMS enabling non-technical members to update blogs and contents dynamically with less effort.",
+    stack: ["Next.js", "React", "Tailwind CSS", "Hygraph"],
     icon: "🌐",
-    glow: "rgba(255,61,113,0.1)",
-    featured: false,
-    link: "#",
+    image: "/enactus.png",
+    glow: "rgba(255, 195, 35, 0.1)",
+    link: "https://enactusjmi.org",
   },
 ];
 
 // ── Timeline ─────
 export const TIMELINE = [
   {
-    date: "2026 - Present",
-    role: "Recommendation System Project",
+    date: "Summer 2026",
+    role: "SnapAttend - AI powered attendance system",
     org: "Personal Project",
-    desc: "Designed and implemented a collaborative filtering recommendation engine. Built data pipelines using Python and Apache Spark to process large-scale event data and generate personalized recommendations."
+    desc: "Developed an intelligent attendance management system that leverages facial recognition technology to streamline the attendance process. Built with Python and Streamlit, that provides a seamless experience for both teachers and students."
+  },
+  {
+    date: "March 2026",
+    role: "NeuralSketch - ML Drawing Classifier",
+    org: "Personal Project",
+    desc: "Developed a real-time sketch recognition app. Achieves 94% accuracy across 50+ categories. User makes a sketch from 50+ trained categoried and model predicts it with top 5 matched sketch."
+  },
+  {
+    date: "Early 2026",
+    role: "Enactus JMI",
+    org: "College Society",
+    desc: "Joined Enactus as Web Development team member. Worked on creating and building the official website of Enactus JMI from scratch. Collaborating with other teams and gaining non-technical experiences."
   },
   {
     date: "Winter 2025",
     role: "Finalist — CodeSlayer 2025",
     org: "48-hour hackathon, 10,000+ participants",
-    desc: "Built HealthLink an AI-powered mental health companion using NLP and LLMs in 48 hours. Awarded Best Use of AI and Best Overall Project.",
+    desc: "Built HealthLink, an AI-powered mental health companion using NLP and LLMs in 48 hours with supportive contribution from team of 4. Awarded Best Use of AI and Best Overall Project.",
   },
   {
     date: "Summer 2025",
-    role: "Open Source Contributor",
+    role: "Open Source Contributions",
     org: "GitHub",
     desc: "Contributed bug fixes and improvements to open-source repositories, collaborating through pull requests and code reviews."
 
@@ -104,7 +116,7 @@ export const TIMELINE = [
     date: "2024 — Present",
     role: "B.Tech in Computer Science",
     org: "Jamia Millia Islamia — CGPA: 9.07/10.0",
-    desc: "Studying core areas of computer science including algorithms, machine learning systems, distributed computing, and natural language processing. Dean's List all semesters."
+    desc: "Starting with general engineering subjects. Continuing with core areas of computer science including algorithms, machine learning systems, distributed computing, computer networks and natural language processing."
 
   },
 ];
