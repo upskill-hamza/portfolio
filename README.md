@@ -30,7 +30,8 @@ A high-performance, cyberpunk-inspired personal portfolio designed to showcase f
 ## 💻 Featured Work
 
 1. **NeuralSketch — ML Drawing Classifier** A real-time sketch recognition app powered by a CNN trained on the Quick, Draw! dataset. Achieves 94% accuracy across 50 categories. Built with PyTorch for training and React for the canvas interface.
-2. **AlgoViz — DSA Visualizer:** Interactive visualization of 30+ algorithms and data structures with step-by-step animations and complexity analysis.
+
+2. **SnapAttend — AI-powered attendance management system** An intelligent attendance management system that leverages facial recognition technology to streamline the attendance process. Built with Python and Streamlit, it provides a seamless experience for both teachers and students.
 
 ---
 

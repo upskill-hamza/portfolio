@@ -128,7 +128,7 @@ export default function Hero() {
             }}
           >
             CS student specializing in Web Development, Data Structures & Algorithms,
-            and Machine Learning. I turn complex problems into elegant solutions.
+            Machine Learning, Generative and Agentic AI. I turn complex problems into elegant solutions.
           </p>
 
           <div
